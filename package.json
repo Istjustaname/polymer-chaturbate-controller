@@ -1,0 +1,11 @@
+{
+  "name": "@istjustaname/polymer-chaturbate-controller",
+  "version": "1.0.0",
+  "engines": {
+    "yarn": ">= 1.0.0"
+  },
+  "dependencies": {
+    "@istjustaname/polymer-socket-io": "file:../polymer-socket-io",
+    "@polymer/polymer": "^3.0.5"
+  }
+}
