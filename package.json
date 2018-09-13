@@ -5,7 +5,7 @@
     "yarn": ">= 1.0.0"
   },
   "dependencies": {
-    "@istjustaname/polymer-socket-io": "file:../polymer-socket-io",
+    "@istjustaname/polymer-socket-io": "github:Istjustaname/polymer-socket-io",
     "@polymer/polymer": "^3.0.5"
   }
 }
