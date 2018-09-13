@@ -23,7 +23,7 @@ const ModelStatus = {
 
 class ChaturbateController extends PolymerElement {
   static get template() {
-    return html '<socket-io id="socket" events="[[events]]"></socket-io>';
+    return html `<socket-io id="socket" events="[[events]]"></socket-io>`;
   }
 
   static get properties() {
