@@ -587,4 +587,6 @@ class ChaturbateController extends PolymerElement {
   }
 }
 
-window.customElements.define('chaturbate-controller', ChaturbateController);  
+if (!customElements.get('chaturbate-controller')) {
+    customElements.define('chaturbate-controller', ChaturbateController);
+}
