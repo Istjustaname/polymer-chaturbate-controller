@@ -2,7 +2,7 @@
   "name": "@istjustaname/polymer-chaturbate-controller",
   "version": "1.0.0",
   "engines": {
-    "yarn": ">= 1.0.0"
+    "npm": ">= 6.0.0"
   },
   "dependencies": {
     "@istjustaname/polymer-socket-io": "github:Istjustaname/polymer-socket-io",
