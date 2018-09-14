@@ -1,7 +1,7 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 //import '@istjustaname/polymer-socket-io/socket-io.js';
 //import {PolymerElement, html} from '@polymer/polymer';
-import { io } from "socket.io-client";
+import * as io from "socket.io-client";
 
 
 class SocketIO extends PolymerElement {
