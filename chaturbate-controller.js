@@ -1,5 +1,75 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
-import '@istjustaname/polymer-socket-io/socket-io.js';
+//import '@istjustaname/polymer-socket-io/socket-io.js';
+import {PolymerElement, html} from '@polymer/polymer';
+import "socket.io-client";
+
+
+class SocketIO extends PolymerElement {
+  static get properties() {
+    return {
+      endpoint: {
+        type: String,
+        value: undefined
+      },
+      connected: {
+        type: Boolean,
+        readOnly: true,
+        notify: true,
+        value: false,
+        reflectToAttribute: true
+      },
+      events: {
+        type: Object,
+        value: {}
+      }
+    }
+  }
+
+  constructor() {
+    super();
+
+    this.socket = null;
+  }
+
+  connectedCallback() {
+    this.socket = this.__getSocket(this.endpoint);
+
+    this.socket.on('connected', () => this._onConnect());
+    this.socket.on('disconnected', () => this._onDisconnect());
+
+    Object.keys(this.events).forEach((key) => {
+      this.socket.on(key, this.events[key]);
+    })
+  }
+
+  _getSocket(endPoint) {
+    const endpoint = endPoint || '';
+
+    if (!window.__SOCKETS) {
+      window.__SOCKETS = {};
+    }
+
+    if (!window.__SOCKETS[endpoint]) {
+      window.__SOCKETS[endpoint] = io(endpoint);
+    }
+
+    return window.__SOCKETS[endpoint];
+  }
+
+  emit(key, value) {
+    this.socket.emit(key, value);
+  }
+
+  _onConnect() {
+    this._setConnected(true);
+  }
+
+  _onDisconnect() {
+    this._setConnected(false);
+  }
+}
+
+window.customElements.define('socket-io', SocketIO);
 
 const State = {
   INIT: 'INIT',
@@ -587,5 +657,4 @@ class ChaturbateController extends PolymerElement {
   }
 }
 
-
-customElements.define('chaturbate-controller', ChaturbateController);
+window.customElements.define('chaturbate-controller', ChaturbateController);
