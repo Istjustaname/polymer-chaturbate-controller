@@ -5,7 +5,6 @@
     "npm": ">= 6.0.0"
   },
   "dependencies": {
-    "@istjustaname/polymer-socket-io": "github:Istjustaname/polymer-socket-io",
     "@polymer/polymer": "^3.0.5"
   }
 }
