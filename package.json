@@ -6,6 +6,6 @@
   },
   "dependencies": {
     "@istjustaname/polymer-socket-io": "github:Istjustaname/polymer-socket-io",
-    "@polymer/polymer": "^3.0.5"
+    "@polymer/polymer": "latest"
   }
 }
