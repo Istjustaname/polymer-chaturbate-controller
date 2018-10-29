@@ -1,11 +1,11 @@
 {
   "name": "@istjustaname/polymer-chaturbate-controller",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "npm": ">= 6.0.0"
   },
   "dependencies": {
     "@istjustaname/polymer-socket-io": "github:Istjustaname/polymer-socket-io",
-    "@polymer/polymer": "latest"
+    "@polymer/polymer": "^3.1.0"
   }
 }
